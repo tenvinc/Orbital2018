@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TEMPPPPPP : MonoBehaviour {
+public class somescript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Debug.Log("this is");
+		
 	}
 	
 	// Update is called once per frame
