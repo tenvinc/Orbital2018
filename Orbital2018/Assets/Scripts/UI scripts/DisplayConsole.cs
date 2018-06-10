@@ -2,7 +2,7 @@
 
 public class DisplayConsole : MonoBehaviour {
 
-    public GameObject towerConsolePrefab;
+    public GameObject towerPrefab;
 
     // Change to public for debugging
     private Transform visibleParent;
@@ -15,13 +15,9 @@ public class DisplayConsole : MonoBehaviour {
     }
 
     public void CreateConsole() {
-        GameObject instance = (GameObject)Instantiate(towerConsolePrefab);
+        GameObject instance = (GameObject)Instantiate(towerPrefab);
         towerConsole = instance.transform;
         towerConsole.SetParent(visibleParent, false);
-    }
-
-    public Transform GetConsoleRef() {
-        return towerConsole;
     }
 
     void OnMouseDown() {

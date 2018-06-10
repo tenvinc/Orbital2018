@@ -111,8 +111,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aeba90b136b45042825d8d78124333d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerConsolePrefab: {fileID: 1278984283179256, guid: c426e77b49f843d47bf7b2dc15ec21af,
+  towerConsole: {fileID: 0}
+  towerPrefab: {fileID: 1278984283179256, guid: c426e77b49f843d47bf7b2dc15ec21af,
     type: 2}
+  visibleParent: {fileID: 0}
 --- !u!114 &114260171328856804
 MonoBehaviour:
   m_ObjectHideFlags: 1
