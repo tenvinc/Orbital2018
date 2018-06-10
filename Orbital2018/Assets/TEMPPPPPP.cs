@@ -6,7 +6,7 @@ public class TEMPPPPPP : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        Debug.Log("this is");
 	}
 	
 	// Update is called once per frame
