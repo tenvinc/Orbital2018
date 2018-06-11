@@ -2,7 +2,9 @@
 
 public class Bullet : MonoBehaviour {
 
-    public float bulletSpeed = 10f;
+    [Header("Bullet Attributes")]
+    public float speed = 80f;
+    public float damage = 50f;
 
     private Transform target;
 
@@ -17,7 +19,7 @@ public class Bullet : MonoBehaviour {
             return;
         }
         Vector3 dir = target.position - transform.position;
-        float distThisFrame = bulletSpeed * Time.deltaTime;
+        float distThisFrame = speed * Time.deltaTime;
         if (dir.magnitude <= distThisFrame) {
             HitTarget();
             return;
@@ -26,7 +28,13 @@ public class Bullet : MonoBehaviour {
     }
 
     void HitTarget() {
-        Debug.Log("Hit");
+        Damage(target);
         Destroy(gameObject);
+    }
+
+    void Damage(Transform enemy)
+    {
+        Enemy e = enemy.GetComponent<Enemy>();
+        e.TakeDamage(damage);
     }
 }

@@ -2,15 +2,17 @@
 
 public class EnemyMove : MonoBehaviour {
 
-    [Header("Enemy attributes")]
-    public float speed = 10;
-    public float threshold = 0.2f;
+    [Header("Enemy range threshold")]
+    public float threshold = 0.4f;
+
+    private Enemy enemy;
 
     // Make public for debugging
     private Transform target;
     public int nextNodeIndex;
 
     void Start() {
+        enemy = GetComponent<Enemy>();
         nextNodeIndex = 0;
         target = Waypoints.waypoints[nextNodeIndex];
     }
@@ -18,8 +20,8 @@ public class EnemyMove : MonoBehaviour {
     void Update() {
         Vector3 dir = target.position - transform.position;
         float dist = Vector3.Distance(target.position, transform.position);
-        transform.Translate(dir.normalized * speed * Time.deltaTime);
-        if (dist < threshold) {
+        transform.Translate(dir.normalized * enemy.speed * Time.deltaTime);
+        if (dist <= threshold) {
             getNextNode();
         }
     }
