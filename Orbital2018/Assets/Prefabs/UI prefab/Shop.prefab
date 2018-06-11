@@ -63,6 +63,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f236795813a23b54f82d7129eee64673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireTower:
+    prefab: {fileID: 1557497657293632, guid: ef3eafd000e44cb44a550a257765313f, type: 2}
+    cost: 0
 --- !u!114 &114931596831469388
 MonoBehaviour:
   m_ObjectHideFlags: 1

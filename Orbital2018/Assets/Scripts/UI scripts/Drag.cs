@@ -77,10 +77,12 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 			transform.SetSiblingIndex(dummyIndex);
 			GetComponent<CanvasGroup>().blocksRaycasts = true;
 			inConsole = true;
+			InitializeCode();
 		}
 	}
 
 	void InitializeCode() {
-		
+		Transform towerRef = dummyParent.GetComponent<BasicCode>().GetTowerRef();
+		GetComponent<BasicCode>().SetTowerRef(towerRef);
 	}
 }

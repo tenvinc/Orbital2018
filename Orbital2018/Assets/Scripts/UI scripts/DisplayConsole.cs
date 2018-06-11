@@ -20,6 +20,10 @@ public class DisplayConsole : MonoBehaviour {
         towerConsole.SetParent(visibleParent, false);
     }
 
+	public Transform GetTowerConsoleRef() {
+		return towerConsole;
+	}
+
     void OnMouseDown() {
         if (towerConsole == null && GetComponent<TurretNode>().turret != null) {
             // Debug.Log("Console not created");

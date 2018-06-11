@@ -2,11 +2,13 @@
 
 public class BasicCode : MonoBehaviour {
 
-    public Transform towerRef;
+    protected Transform towerRef;
+    public string dummyTag = "Dummy";
 
     public virtual void Run() {
         Debug.Log("By default this does nothing");
-        foreach (Transform child in this.transform) {
+        foreach (Transform child in transform) {
+            if (child.tag == dummyTag) continue;   
             child.GetComponent<BasicCode>().Run();
         }
     }
@@ -15,4 +17,8 @@ public class BasicCode : MonoBehaviour {
         towerRef = reference;
         Debug.Log(towerRef.name);
     }
+
+	public Transform GetTowerRef() {
+		return towerRef;
+	}
 }

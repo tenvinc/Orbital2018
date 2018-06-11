@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Firetower
   - Enemy
+  - Dummy
   layers:
   - Default
   - TransparentFX

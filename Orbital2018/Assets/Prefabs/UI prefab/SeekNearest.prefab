@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 114589251685573346}
   - component: {fileID: 114955364303078334}
   - component: {fileID: 225473839512990966}
+  - component: {fileID: 114286574626591784}
   m_Layer: 5
   m_Name: SeekNearest
   m_TagString: Untagged
@@ -110,6 +111,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114286574626591784
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1741841727550430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 535c4f368daebf647874e4716c265e9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dummyTag: Dummy
+  enemyTag: Enemy
 --- !u!114 &114589251685573346
 MonoBehaviour:
   m_ObjectHideFlags: 1
