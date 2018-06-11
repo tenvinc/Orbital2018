@@ -34,17 +34,33 @@ public class TurretNode : MonoBehaviour {
             // TODO: Can show the script corresponding to the current turret on UI 
         }
         else {
-            Debug.Log("Choose a turret");
-            GameObject selectedPrefab = BuildManager.bm.GetTurretToBuild();
-            if (selectedPrefab == null) {
-                Debug.Log("Please select a turret.");
-                return;
-            }
-            turret = (GameObject) Instantiate(selectedPrefab, transform.position, transform.rotation);
-            turret.transform.SetParent(transform);
-            // To make sure that turret instantiates correctly
-            turret.transform.localPosition = Vector3.zero;
-            turret.transform.localScale = Vector3.one;
+            BuildTurret(BuildManager.bm.GetTurretToBuild());
         }
+    }
+
+    void BuildTurret (TurretBlueprint blueprint)
+    {
+        if (PlayerStats.Money < blueprint.cost)
+        {
+            Debug.Log("Not enough money to build that!");
+            return;
+        }
+
+        PlayerStats.Money -= blueprint.cost;
+
+        Debug.Log("Choose a turret");
+        GameObject selectedPrefab = blueprint.prefab;
+        if (selectedPrefab == null)
+        {
+            Debug.Log("Please select a turret.");
+            return;
+        }
+       
+        turret = (GameObject)Instantiate(selectedPrefab, transform.position, transform.rotation);
+        turret.transform.SetParent(transform);
+        // To make sure that turret instantiates correctly
+        turret.transform.localPosition = Vector3.zero;
+        turret.transform.localScale = Vector3.one;
+
     }
 }

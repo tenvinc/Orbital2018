@@ -318,11 +318,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turretRange: 100
-  pivotToRotate: {fileID: 4494459366409208}
-  turnSpeed: 2
   fireRate: 2
+  turnSpeed: 2
   bulletPrefab: {fileID: 1245318441122698, guid: e6a40dfc68685d84e99598fdae9916c3,
     type: 2}
   firePoint: {fileID: 4160793404064994}
-  fireCD: 0
+  pivotToRotate: {fileID: 4494459366409208}
   target: {fileID: 0}

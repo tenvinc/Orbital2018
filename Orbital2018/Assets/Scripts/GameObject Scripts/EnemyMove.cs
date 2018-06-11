@@ -30,6 +30,7 @@ public class EnemyMove : MonoBehaviour {
         if (nextNodeIndex >= Waypoints.waypoints.Length - 1) {
             Debug.Log("reached the end");
             Destroy(this.gameObject);
+            PlayerStats.Lives--;
             return;
         }
         nextNodeIndex++;
