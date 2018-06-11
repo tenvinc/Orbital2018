@@ -7,7 +7,7 @@ public class BuildManager : MonoBehaviour {
     public static BuildManager bm;
 
     [SerializeField]
-    private GameObject turretToBuild;
+    private TurretBlueprint turretToBuild;
 
     void Awake() {
         if (bm != null) {
@@ -16,16 +16,12 @@ public class BuildManager : MonoBehaviour {
         else bm = this;
     }
    
-    public GameObject GetTurretToBuild() {
+    public TurretBlueprint GetTurretToBuild() {
         return turretToBuild;
     }
 
-    public void SetTurretToBuild(string tag) {
-        // Debug.Log("Trying to set turret to " + tag);
-        if (prefab.tag == tag) {
-            turretToBuild = prefab;
-            // Debug.Log("Finished setting turret");
-        }
+    public void SetTurretToBuild(TurretBlueprint turret) {
+        turretToBuild = turret;
         return;
     }
 }

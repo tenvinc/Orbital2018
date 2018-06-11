@@ -2,7 +2,9 @@
 
 public class Shop : MonoBehaviour {
 
-    public void BuyTurret(string tag) {
-        BuildManager.bm.SetTurretToBuild(tag);
+    public TurretBlueprint fireTower;
+
+    public void BuyTurret() {
+        BuildManager.bm.SetTurretToBuild(fireTower);
     }
 }
