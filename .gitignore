@@ -35,3 +35,14 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+*.unity
+Orbital2018/Assets/Scenes/GameTestScene.unity.meta
+Orbital2018/Assets/Scenes/SampleScene.unity.meta
+Orbital2018/Assets/Scenes/UITestScene.unity.meta
+Orbital2018/ProjectSettings/ProjectVersion.txt
+Orbital2018/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Messaging.dll.meta
+Orbital2018/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll.meta
+Orbital2018/Assets/UnityVS/Editor/SyntaxTree.Mono.Cecil.dll.meta
+Orbital2018/Assets/UnityVS/Editor.meta
+Orbital2018/Assets/UnityVS.meta
+Orbital2018/ProjectSettings/ProjectVersion.txt
