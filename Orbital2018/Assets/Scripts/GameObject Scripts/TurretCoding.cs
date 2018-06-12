@@ -3,11 +3,10 @@
 public class TurretCoding : MonoBehaviour {
 
     public float timeBetweenActions = 0.5f;
-    public string enemyTag = "Enemy";
-	
+
 	public Transform towerConsole;
 
-	void Start () {
+    void Start () {
 		towerConsole = transform.parent.GetComponent<DisplayConsole>().GetTowerConsoleRef();
 		Debug.Log(towerConsole.name);
 		towerConsole.GetComponent<BasicCode>().SetTowerRef(transform);

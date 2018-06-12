@@ -41,8 +41,11 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 			// Find nearest match
 			float minDist = Mathf.Infinity;
 			int indexToSwap = dummyIndex;
+            // Starting index changes depending on tag of current dummyParent
+            int startingIndex = ComputeStartingIndex();
 			Transform transformToSwap = dummy.transform;
-			foreach (Transform c in dummyParent) {
+			for (int i=startingIndex; i<dummyParent.childCount; i++) {
+                Transform c = dummyParent.GetChild(i);
 				float distDiff = Vector2.Distance(c.position, transform.position);
 				if (distDiff < minDist) {
 					minDist = distDiff;
@@ -85,4 +88,14 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 		Transform towerRef = dummyParent.GetComponent<BasicCode>().GetTowerRef();
 		GetComponent<BasicCode>().SetTowerRef(towerRef);
 	}
+
+    int ComputeStartingIndex()
+    {
+        // Ignore the first element for parents with conditionTag
+        if (dummyParent.tag == TagManager.tm.conditionTag)
+        {
+            return 1;
+        }
+        return 0;
+    }
 }

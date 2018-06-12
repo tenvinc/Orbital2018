@@ -2,10 +2,8 @@
 
 public class SeekNearest : BasicCode {
 
-    public string enemyTag = "Enemy";
-
     public override void Run() {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag(TagManager.tm.enemyTag);
         float minDist = Mathf.Infinity;
         Transform target = null;
         for (int i = 0; i < enemies.Length - 1; i++) {

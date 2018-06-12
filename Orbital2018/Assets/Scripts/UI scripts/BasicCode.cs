@@ -2,18 +2,22 @@
 
 public class BasicCode : MonoBehaviour {
 
-    protected Transform towerRef;
-    public string dummyTag = "Dummy";
+    public Transform towerRef;
 
     public virtual void Run() {
         Debug.Log("By default this does nothing");
         foreach (Transform child in transform) {
-            if (child.tag == dummyTag) continue;   
+            if (child.tag == TagManager.tm.dummyTag) continue;   
             child.GetComponent<BasicCode>().Run();
         }
     }
 
-    public void SetTowerRef(Transform reference) {
+    public virtual bool RunCheck()
+    {
+        return true;
+    }
+
+    public virtual void SetTowerRef(Transform reference) {
         towerRef = reference;
         Debug.Log(towerRef.name);
     }

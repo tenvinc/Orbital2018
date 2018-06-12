@@ -70,8 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 535c4f368daebf647874e4716c265e9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dummyTag: Dummy
-  enemyTag: Enemy
+  towerRef: {fileID: 0}
 --- !u!114 &114589251685573346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -85,10 +84,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
   m_MinWidth: -1
-  m_MinHeight: 50
-  m_PreferredWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: 50
   m_PreferredHeight: 50
-  m_FlexibleWidth: 1
+  m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
 --- !u!114 &114955364303078334
@@ -109,7 +108,7 @@ MonoBehaviour:
   myPrefab: {fileID: 1741841727550430}
   originalIndex: 0
   dummyIndex: 0
-  threshold: 100
+  threshold: 50
   inConsole: 0
 --- !u!222 &222210451997682114
 CanvasRenderer:
