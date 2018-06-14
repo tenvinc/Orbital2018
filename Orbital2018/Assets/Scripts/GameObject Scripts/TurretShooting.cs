@@ -15,8 +15,8 @@ public class TurretShooting : MonoBehaviour {
     public Transform pivotToRotate;
 
     [SerializeField]
-    private Transform target;
-    private float fireCD;
+    protected Transform target;
+    protected float fireCD;
 
     public void SetTarget(Transform _target, float distanceAway) {
         if (_target == null) return;
