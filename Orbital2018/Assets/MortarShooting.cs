@@ -2,6 +2,9 @@
 
 public class MortarShooting : TurretShooting {
 
+    private float gravityConst;
+    public Transform refPoint;
+
     void Start()
     {
         InvokeRepeating("SeekNearest", 0f, 0.5f);
@@ -15,7 +18,7 @@ public class MortarShooting : TurretShooting {
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = Quaternion.Lerp(pivotToRotate.rotation, lookRotation, turnSpeed * Time.deltaTime).eulerAngles;
         pivotToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-
+        
         if (fireCD <= 0)
         {
             ShootMortar();
@@ -55,6 +58,36 @@ public class MortarShooting : TurretShooting {
     void ShootMortar()
     {
         Debug.Log("mortar shoots");
-        GameObject cannonball = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject projectile = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Vector3 projectileInXZ = new Vector3(projectile.transform.position.x, 0f, projectile.transform.position.z);
+        Vector3 targetInXZ = new Vector3(target.transform.position.x, 0f, target.transform.position.z);
+        Projectile projectilePhysics = projectile.GetComponent<Projectile>();
+
+        projectile.transform.LookAt(targetInXZ);
+
+        // shorthand for formula https://vilbeyli.github.io/Projectile-Motion-Tutorial-for-Arrows-and-Missiles-in-Unity3D/#targetlocations
+        float R = Vector3.Distance(projectileInXZ, targetInXZ);
+        //Debug.Log("R is " + R);
+        float G = -projectilePhysics.gravity;
+        //Debug.Log("G is " + G);
+        float tanAlpha = (firePoint.position.y - refPoint.position.y) / (firePoint.position.z - refPoint.position.z);
+       // Debug.Log("tan alpha is " + tanAlpha);
+        float H = target.position.y - projectile.transform.position.y;
+        //Debug.Log("H is " + H);
+
+        // calculate the local space components of the velocity 
+        // required to land the projectile on the target object 
+        float Vz = Mathf.Sqrt(G * R * R / (2.0f * (H - R * tanAlpha)));
+       // Debug.Log("Vz is " + Vz);
+        float Vy = tanAlpha * Vz;
+       // Debug.Log("Vy is " + Vy);
+
+        // create the velocity vector in local space and get it in global space
+        Vector3 localVelocity = new Vector3(0f, Vy, Vz);
+        Vector3 globalVelocity = projectile.transform.TransformDirection(localVelocity);
+
+        // launch the object by setting its initial velocity and flipping its state
+        //Debug.Log(globalVelocity.x);
+        projectilePhysics.Initialise(globalVelocity);
     }
 }
