@@ -1,12 +1,37 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class TargetSpecificEnemy : BasicCode {
 
-    public string enemyTag;
+    public Dropdown dropdown;
+
+    private string enemyTag;
+
+    List<string> enemies = new List<string>() { "Please Select Enemy", "Enemy" };
+
+    public void DropdownIndexChanged(int index)
+    {
+        enemyTag = enemies[index];
+    }
+
+    private void Start()
+    {
+        PopulateList();
+    }
 
     public override void Run()
     {
+      
+        if (enemyTag == null || enemyTag == "Please Select Enemy")
+            return;
+
         TSE(enemyTag);
+    }
+
+    public void PopulateList()
+    {
+        dropdown.AddOptions(enemies);
     }
 
     void TSE (string enemyTag)
