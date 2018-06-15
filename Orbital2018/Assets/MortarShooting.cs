@@ -70,7 +70,9 @@ public class MortarShooting : TurretShooting {
         //Debug.Log("R is " + R);
         float G = -projectilePhysics.gravity;
         //Debug.Log("G is " + G);
-        float tanAlpha = (firePoint.position.y - refPoint.position.y) / (firePoint.position.z - refPoint.position.z);
+        Vector3 firePointXZ = new Vector3 (firePoint.position.x, 0f, firePoint.position.z);
+        Vector3 refPointXZ = new Vector3(refPoint.position.x, 0f, refPoint.position.z);
+        float tanAlpha = (firePoint.position.y - refPoint.position.y) / Vector3.Distance(firePointXZ, refPointXZ);
        // Debug.Log("tan alpha is " + tanAlpha);
         float H = target.position.y - projectile.transform.position.y;
         //Debug.Log("H is " + H);

@@ -335,7 +335,7 @@ MonoBehaviour:
   turretRange: 200
   fireRate: 2
   turnSpeed: 10
-  bulletPrefab: {fileID: 1760530468795716, guid: 25cdf056e35865b49a8af694ef15453c,
+  bulletPrefab: {fileID: 1490917051641330, guid: 25cdf056e35865b49a8af694ef15453c,
     type: 2}
   firePoint: {fileID: 4733973523536114}
   pivotToRotate: {fileID: 4289442456944152}
