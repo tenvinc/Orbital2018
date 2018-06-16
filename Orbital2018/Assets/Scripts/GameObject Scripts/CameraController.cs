@@ -16,7 +16,7 @@ public class CameraController : MonoBehaviour {
     void Update() {
 
         // Can change the key next time
-        if (Input.GetKeyDown(KeyCode.Escape)) 
+        if (Input.GetAxis("Camera")>0) 
             freeToPan = !freeToPan;
 
         if (!freeToPan) 

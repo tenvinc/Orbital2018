@@ -2,17 +2,10 @@
 
 public class TurretShooting : MonoBehaviour {
 
-    [Header("Firing attribute")]
-    public float turretRange = 100f;
-    public float fireRate = 2f;
-
-    [Header("Turning Attribute")]
-    public float turnSpeed = 10f;
-
-    [Header("Turret Admin")]
-    public GameObject bulletPrefab;
+    public Turret turret;
     public Transform firePoint;
     public Transform pivotToRotate;
+    public Transform refPoint;
 
     [SerializeField]
     protected Transform target;
@@ -23,10 +16,10 @@ public class TurretShooting : MonoBehaviour {
         // Keep current target until it goes out of range
         if (target != null) {
             float currTargetDist = Vector3.Distance(target.position, transform.position);
-            if (currTargetDist > turretRange) 
+            if (currTargetDist > turret.turretRange) 
                 target = null;
         }
-        if (target == null && distanceAway < turretRange) {
+        if (target == null && distanceAway < turret.turretRange) {
             target = _target;
         }
     }
@@ -36,18 +29,17 @@ public class TurretShooting : MonoBehaviour {
         // Lock on target
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
-        Vector3 rotation = Quaternion.Lerp(pivotToRotate.rotation, lookRotation, turnSpeed * Time.deltaTime).eulerAngles;
+        Vector3 rotation = Quaternion.Lerp(pivotToRotate.rotation, lookRotation, turret.turnSpeed * Time.deltaTime).eulerAngles;
         pivotToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 
         if (fireCD <= 0) {
             Shoot();
-            fireCD = 1 / fireRate;
+            fireCD = 1 / turret.fireRate;
         }
         fireCD -= Time.deltaTime;
     }
 
     void Shoot() {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        bullet.GetComponent<Bullet>().SetTarget(target);
+        turret.Shoot(this, target);
     }
 }

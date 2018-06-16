@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 54542209696591630}
-  gravity: 500
+  _gravity: 500
 --- !u!135 &135605527264869398
 SphereCollider:
   m_ObjectHideFlags: 1

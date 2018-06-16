@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenActions: 0.5
-  enemyTag: Enemy
+  towerConsole: {fileID: 0}
 --- !u!114 &114726289982857718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -317,11 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1e23013b1673814996664591559b8fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretRange: 100
-  fireRate: 2
-  turnSpeed: 2
-  bulletPrefab: {fileID: 1245318441122698, guid: e6a40dfc68685d84e99598fdae9916c3,
-    type: 2}
+  turret: {fileID: 11400000, guid: e7571844a45f2d349893fec030ef92ab, type: 2}
   firePoint: {fileID: 4160793404064994}
   pivotToRotate: {fileID: 4494459366409208}
   target: {fileID: 0}

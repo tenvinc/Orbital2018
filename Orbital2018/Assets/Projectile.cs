@@ -3,11 +3,13 @@
 public class Projectile : MonoBehaviour {
 
     public Rigidbody rb;
-    public float gravity = 10f;
+    public float _gravity = 10f;
+    private float gravity;
 
     public void Initialise(Vector3 _velocity)
     {
         rb.velocity = _velocity;
+        gravity = _gravity;
     }
 
     void FixedUpdate()
