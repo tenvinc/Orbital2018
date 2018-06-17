@@ -11,6 +11,7 @@ public class WaveSpawner : MonoBehaviour {
 
     [Header("Enemy prefabs")]
     public GameObject enemyPrefab;
+    public GameObject bossPrefab;
 
     [SerializeField]
     private int waveNum;
@@ -34,10 +35,16 @@ public class WaveSpawner : MonoBehaviour {
             Spawn();
             yield return new WaitForSeconds(timeBetweenSpawns);
         }
+        SpawnBoss();
     }
     // Currently this spawns only 1 type of enemy and it is hardcoded in
     // Can change this to receive another input to determine who to spawn
     void Spawn() {
         Instantiate(enemyPrefab, transform.position, transform.rotation);
+    }
+
+    void SpawnBoss ()
+    {
+        Instantiate(bossPrefab, transform.position, transform.rotation);
     }
 }

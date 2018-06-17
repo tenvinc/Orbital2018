@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Dummy
   - Condition
+  - Boss
   layers:
   - Default
   - TransparentFX

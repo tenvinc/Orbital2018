@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour {
 
     [Header("Enemy Attributes")]
     public float speed = 60f;
-    public float health = 100f;
+    public float health;
     public int value = 50;
 
     [Header("Unity Stuff")]

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114268756592602020}
   - component: {fileID: 114856954696253946}
   - component: {fileID: 114981379382342034}
+  - component: {fileID: 225334956475839824}
   m_Layer: 5
   m_Name: IfCondition
   m_TagString: Condition
@@ -63,6 +64,7 @@ GameObject:
   - component: {fileID: 114308194822721436}
   - component: {fileID: 114586367572376506}
   - component: {fileID: 114874010180953298}
+  - component: {fileID: 225672342668584948}
   m_Layer: 5
   m_Name: IfExecution
   m_TagString: Untagged
@@ -222,6 +224,7 @@ MonoBehaviour:
   ifConditionZone: {fileID: 224785414953493902}
   ifExecutionZone: {fileID: 224461604033379080}
   isConditionTrue: 0
+  tagmasterso: {fileID: 11400000, guid: d5e4d9aa663c02e408d65edeb03f051d, type: 2}
 --- !u!114 &114586367572376506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -489,6 +492,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &225334956475839824
+CanvasGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1294331585099112}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!225 &225672342668584948
+CanvasGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1858235026470922}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!225 &225812367271187600
 CanvasGroup:
   m_ObjectHideFlags: 1

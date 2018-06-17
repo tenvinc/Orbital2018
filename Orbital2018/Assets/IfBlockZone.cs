@@ -6,6 +6,7 @@ public class IfBlockZone : BasicCode {
     public Transform ifExecutionZone;
     public bool isConditionTrue;
     private int conditionNum;
+    public TagMasterSO tagmasterso;
 
     void Start() {
         ifExecutionZone.gameObject.SetActive(false);
@@ -49,7 +50,7 @@ public class IfBlockZone : BasicCode {
         int count = 0;
         foreach (Transform child in ifConditionZone)
         {
-            if (child.tag != TagManager.tm.dummyTag)
+            if (child.tag != tagmasterso.DummyTag)
             {
                 count++;
             }

@@ -56,4 +56,5 @@ MonoBehaviour:
   timeBetweenSpawns: 0.5
   enemyPrefab: {fileID: 1557317141874676, guid: 76680bfd5d9fdad40adc61731a105a12,
     type: 2}
+  bossPrefab: {fileID: 1557317141874676, guid: 7b6ac00511d1e7d439e81581ed2ec952, type: 2}
   waveNum: 0

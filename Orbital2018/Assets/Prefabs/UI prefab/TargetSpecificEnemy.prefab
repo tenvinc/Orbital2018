@@ -342,6 +342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerRef: {fileID: 0}
   dropdown: {fileID: 114478903899866094}
+  tagmasterso: {fileID: 11400000, guid: d5e4d9aa663c02e408d65edeb03f051d, type: 2}
 --- !u!114 &114394845686257410
 MonoBehaviour:
   m_ObjectHideFlags: 1

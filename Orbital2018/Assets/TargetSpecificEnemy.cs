@@ -7,8 +7,9 @@ public class TargetSpecificEnemy : BasicCode {
     public Dropdown dropdown;
 
     private string enemyTag;
+    public TagMasterSO tagmasterso;
 
-    List<string> enemies = new List<string>() { "Please Select Enemy", "Enemy" };
+    List<string> enemies = new List<string>() { "Please Select Enemy", "Enemy", "Boss" };
 
     public void DropdownIndexChanged(int index)
     {
@@ -36,7 +37,7 @@ public class TargetSpecificEnemy : BasicCode {
 
     void TSE (string enemyTag)
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(TagManager.tm.enemyTag);
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
         float minDist = Mathf.Infinity;
         Transform target = null;
         for (int i = 0; i < enemies.Length - 1; i++)
