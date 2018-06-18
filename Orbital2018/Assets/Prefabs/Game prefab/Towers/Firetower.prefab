@@ -320,4 +320,5 @@ MonoBehaviour:
   turret: {fileID: 11400000, guid: e7571844a45f2d349893fec030ef92ab, type: 2}
   firePoint: {fileID: 4160793404064994}
   pivotToRotate: {fileID: 4494459366409208}
+  refPoint: {fileID: 0}
   target: {fileID: 0}

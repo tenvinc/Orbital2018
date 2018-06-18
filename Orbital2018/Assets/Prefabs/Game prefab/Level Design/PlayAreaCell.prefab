@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114260171328856804}
   - component: {fileID: 114059447032663338}
   m_Layer: 0
-  m_Name: TurretArea
+  m_Name: PlayAreaCell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,7 +39,7 @@ Transform:
   m_GameObject: {fileID: 1245845305955366}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -132, y: 10, z: -109}
-  m_LocalScale: {x: 4, y: 1, z: 4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: d4adaab7ed86fd548af7a8d4c99f4e33, type: 2}
+  - {fileID: 2100000, guid: 2e04f1b801dddc047ba9680aa7aad11f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -111,10 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aeba90b136b45042825d8d78124333d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerConsole: {fileID: 0}
   towerPrefab: {fileID: 1278984283179256, guid: c426e77b49f843d47bf7b2dc15ec21af,
     type: 2}
-  visibleParent: {fileID: 0}
 --- !u!114 &114260171328856804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,6 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5b231ba83f35d446abee1b3e97d5465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  litColor: {r: 0.8207547, g: 0.112273075, b: 0.112273075, a: 0}
-  clickedColor: {r: 0.8584906, g: 0.36040404, b: 0.36040404, a: 0.7607843}
+  litMaterial: {fileID: 2100000, guid: 499d2086b51a4334da5f1fa0b35a14ee, type: 2}
+  clickedMaterial: {fileID: 2100000, guid: 499d2086b51a4334da5f1fa0b35a14ee, type: 2}
   turret: {fileID: 0}
