@@ -3,8 +3,8 @@
 public class TurretNode : MonoBehaviour {
 
     [Header("UI settings")]
-    public Color litColor;
-    public Color clickedColor;
+    public Material litMaterial;
+    public Material clickedMaterial;
 
     // TODO: Can be changed to private 
     [Header("Active turret")]
@@ -12,23 +12,23 @@ public class TurretNode : MonoBehaviour {
 
     // Stores original information
     private Renderer rend;
-    private Color defaultColor;
+    private Material defaultMaterial;
 
     void Start() {
         rend = GetComponent<Renderer>();
-        defaultColor = rend.material.color;
+        defaultMaterial = rend.sharedMaterial;
     }
 
 	void OnMouseEnter() {
-        rend.material.color = litColor;
+        rend.sharedMaterial = litMaterial;
     }
 
     void OnMouseExit() {
-        rend.material.color = defaultColor;
+        rend.sharedMaterial = defaultMaterial;
     }
 
     void OnMouseDown() {
-        rend.material.color = clickedColor;
+        rend.sharedMaterial = clickedMaterial;
         if (turret != null) {
             Debug.Log("Turret in place. Cannot build here.");
             // TODO: Can show the script corresponding to the current turret on UI 
