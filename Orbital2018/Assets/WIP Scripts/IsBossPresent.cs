@@ -2,8 +2,6 @@
 
 public class IsBossPresent : BasicCode {
 
-    public TagMasterSO tagmasterso;
-
     public override bool RunCheck()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(tagmasterso.BossTag);

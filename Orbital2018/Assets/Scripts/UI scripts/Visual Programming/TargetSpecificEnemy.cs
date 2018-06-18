@@ -7,7 +7,6 @@ public class TargetSpecificEnemy : BasicCode {
     public Dropdown dropdown;
 
     private string enemyTag;
-    public TagMasterSO tagmasterso;
 
     List<string> enemies = new List<string>() { "Please Select Enemy", "Enemy", "Boss" };
 

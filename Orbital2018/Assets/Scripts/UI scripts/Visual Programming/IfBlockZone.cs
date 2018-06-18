@@ -6,7 +6,6 @@ public class IfBlockZone : BasicCode {
     public Transform ifExecutionZone;
     public bool isConditionTrue;
     private int conditionNum;
-    public TagMasterSO tagmasterso;
 
     void Start() {
         ifExecutionZone.gameObject.SetActive(false);

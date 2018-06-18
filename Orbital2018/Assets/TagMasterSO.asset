@@ -14,3 +14,11 @@ MonoBehaviour:
   EnemyTag: Enemy
   BossTag: Boss
   DummyTag: Dummy
+  ConditionTag: Condition
+  Tags:
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss

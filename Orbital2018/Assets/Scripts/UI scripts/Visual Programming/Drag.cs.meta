@@ -3,7 +3,12 @@ guid: 12e9b5bb114c7b048a81c9742071a233
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - originalParent: {instanceID: 0}
+  - dummyParent: {instanceID: 0}
+  - dummyPrefab: {instanceID: 0}
+  - myPrefab: {instanceID: 0}
+  - tagmasterso: {fileID: 11400000, guid: d5e4d9aa663c02e408d65edeb03f051d, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

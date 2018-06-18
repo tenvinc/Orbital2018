@@ -3,7 +3,9 @@ guid: a5ac36b090fb75d41b604ddfa41a90a1
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - towerRef: {instanceID: 0}
+  - tagmasterso: {fileID: 11400000, guid: d5e4d9aa663c02e408d65edeb03f051d, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

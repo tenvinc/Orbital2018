@@ -4,8 +4,6 @@ using System.Collections.Generic;
 
 public class SeekNearest : BasicCode {
 
-    public TagMasterSO tagmasterso;
-
     private void Start()
     {
         tagmasterso.Initialize();

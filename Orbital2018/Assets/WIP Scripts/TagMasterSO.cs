@@ -9,6 +9,7 @@ public class TagMasterSO : ScriptableObject {
     public string EnemyTag;
     public string BossTag;
     public string DummyTag;
+    public string ConditionTag;
 
     public List<string> Tags = new List<string>();
 

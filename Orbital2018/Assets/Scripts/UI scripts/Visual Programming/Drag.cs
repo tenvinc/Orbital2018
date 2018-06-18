@@ -15,7 +15,9 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 	public int originalIndex;
     public int dummyIndex;
 	public float threshold = 100f;
-	public bool inConsole = false;
+    public bool inConsole = false;
+
+    public TagMasterSO tagmasterso;
 
 	public void OnBeginDrag(PointerEventData data) {
 		originalParent = transform.parent;
@@ -92,7 +94,7 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     int ComputeStartingIndex()
     {
         // Ignore the first element for parents with conditionTag
-        if (dummyParent.tag == TagManager.tm.conditionTag)
+        if (dummyParent.tag == tagmasterso.ConditionTag)
         {
             return 1;
         }
