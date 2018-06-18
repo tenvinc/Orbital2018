@@ -6,7 +6,6 @@ public class BasicCode : MonoBehaviour {
     public TagMasterSO tagmasterso;
 
     public virtual void Run() {
-        Debug.Log("By default this does nothing");
         foreach (Transform child in transform) {
             if (child.tag == tagmasterso.DummyTag) continue;   
             child.GetComponent<BasicCode>().Run();
@@ -20,7 +19,6 @@ public class BasicCode : MonoBehaviour {
 
     public virtual void SetTowerRef(Transform reference) {
         towerRef = reference;
-        Debug.Log(towerRef.name);
     }
 
 	public Transform GetTowerRef() {

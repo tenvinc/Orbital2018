@@ -8,7 +8,7 @@ public class TurretCoding : MonoBehaviour {
 
     void Start () {
 		towerConsole = transform.parent.GetComponent<DisplayConsole>().GetTowerConsoleRef();
-		Debug.Log(towerConsole.name);
+		//Debug.Log(towerConsole.name);
 		towerConsole.GetComponent<BasicCode>().SetTowerRef(transform);
         InvokeRepeating("RunPlayerCode", 0f, timeBetweenActions);
 	}

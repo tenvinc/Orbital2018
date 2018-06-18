@@ -10,7 +10,9 @@ public class IfBlockZone : BasicCode {
     void Start() {
         ifExecutionZone.gameObject.SetActive(false);
         if (transform.parent.tag == tagmasterso.CodeShopTag)
+        {
             ifConditionZone.GetComponent<DropZone>().DisableDropZone();
+        }
     }
 
     void Update () {

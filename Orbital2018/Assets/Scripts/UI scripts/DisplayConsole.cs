@@ -26,7 +26,7 @@ public class DisplayConsole : MonoBehaviour {
 
     void OnMouseDown() {
         if (towerConsole == null && GetComponent<TurretNode>().turret != null) {
-            Debug.Log("Console not created");
+            //Debug.Log("Console not created");
             CreateConsole();
             return;
         }
