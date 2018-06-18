@@ -5,11 +5,11 @@ public class DisplayConsole : MonoBehaviour {
     public GameObject towerPrefab;
 
     // Change to public for debugging
-    private Transform visibleParent;
-    private Transform hiddenParent;
+    public Transform visibleParent;
+    public Transform hiddenParent;
     private Transform towerConsole = null;
 
-    void Start() {
+    private void Start() {
         visibleParent = InterfaceManager.ui.visibleUI;
         hiddenParent = InterfaceManager.ui.hiddenUI;
     }
@@ -26,7 +26,7 @@ public class DisplayConsole : MonoBehaviour {
 
     void OnMouseDown() {
         if (towerConsole == null && GetComponent<TurretNode>().turret != null) {
-            // Debug.Log("Console not created");
+            Debug.Log("Console not created");
             CreateConsole();
             return;
         }

@@ -69,6 +69,7 @@ MonoBehaviour:
   dummyIndex: 0
   threshold: 50
   inConsole: 0
+  tagmasterso: {fileID: 11400000, guid: d5e4d9aa663c02e408d65edeb03f051d, type: 2}
 --- !u!114 &114289335044522826
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -114,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerRef: {fileID: 0}
+  tagmasterso: {fileID: 0}
   isTrue: 0
 --- !u!114 &114736437103510792
 MonoBehaviour:
