@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[CreateAssetMenu (menuName = "SkillsSO")]
 public class SkillsSO : ScriptableObject {
 
     TowerSO towerSO;
