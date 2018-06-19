@@ -48,11 +48,11 @@ public class TurretNode : MonoBehaviour {
 
         PlayerStats.Money -= blueprint.cost;
 
-        Debug.Log("Choose a turret");
+        //Debug.Log("Choose a turret");
         GameObject selectedPrefab = blueprint.prefab;
         if (selectedPrefab == null)
         {
-            Debug.Log("Please select a turret.");
+            //Debug.Log("Please select a turret.");
             return;
         }
        

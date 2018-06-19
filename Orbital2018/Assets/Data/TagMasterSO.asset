@@ -15,7 +15,78 @@ MonoBehaviour:
   BossTag: Boss
   DummyTag: Dummy
   ConditionTag: Condition
+  CodeShopTag: CodeShop
   Tags:
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
+  - Enemy
+  - Boss
   - Enemy
   - Boss
   - Enemy

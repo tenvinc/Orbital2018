@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler {
+public class DropZone : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
+
+    private bool isActive = true;
 
 	public void OnPointerEnter(PointerEventData data) {
-        if (data.pointerDrag == null) return;
+        if (data.pointerDrag == null || !isActive) return;
         Drag d = data.pointerDrag.gameObject.GetComponent<Drag>();
         if (d != null) {
             d.dummyParent = transform;
@@ -13,7 +15,7 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
     }
 
 	public void OnPointerExit(PointerEventData data) {
-        if (data.pointerDrag == null) return;
+        if (data.pointerDrag == null || !isActive) return;
         Drag d = data.pointerDrag.gameObject.GetComponent<Drag>();
         if (d != null) {
             d.dummyParent = null;
@@ -22,7 +24,13 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
         Debug.Log("Exiting zone");
     }
 
-	 public void OnDrop(PointerEventData data) {
-        Debug.Log("Dropping on " + gameObject.name);
+    public void DisableDropZone()
+    {
+        isActive = false;
+    }
+
+    public void EnableDropZone()
+    {
+        isActive = true;
     }
 }

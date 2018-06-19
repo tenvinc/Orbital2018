@@ -6,6 +6,6 @@ public class Shop : MonoBehaviour {
 
     public void BuyTurret() {
         BuildManager.bm.SetTurretToBuild(fireTower);
-        Debug.Log("buying");
+        //Debug.Log("buying");
     }
 }

@@ -64,7 +64,6 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 				dummyIndex = indexToSwap;
 		}
 		else if (dummyParent == null && dummy != null) {
-			Debug.Log("Out of bound. Destroying dummy now");
 			dummyIndex = -1;
 			Destroy(dummy.gameObject);
 		}
@@ -72,7 +71,6 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
 	public void OnEndDrag(PointerEventData data) {
 		if (dummyParent == null) {
-			Debug.Log("Lost connection, destruction starting now");
 			Destroy(gameObject);
 			return;
 		}

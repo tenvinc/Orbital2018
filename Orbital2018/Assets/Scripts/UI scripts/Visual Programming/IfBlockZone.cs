@@ -9,6 +9,10 @@ public class IfBlockZone : BasicCode {
 
     void Start() {
         ifExecutionZone.gameObject.SetActive(false);
+        if (transform.parent.tag == tagmasterso.CodeShopTag)
+        {
+            ifConditionZone.GetComponent<DropZone>().DisableDropZone();
+        }
     }
 
     void Update () {
@@ -37,6 +41,8 @@ public class IfBlockZone : BasicCode {
     }
 
     public override void SetTowerRef(Transform reference) {
+        if (transform.parent.tag != tagmasterso.CodeShopTag)
+            ifConditionZone.GetComponent<DropZone>().EnableDropZone();
         towerRef = reference;
         foreach (Transform c in transform)
         {
