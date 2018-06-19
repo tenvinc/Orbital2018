@@ -5,7 +5,8 @@ public class PanZone : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
 
     public string panType = "East";
-    public bool inZone = false;
+    private bool inZone;
+    private bool cameraLocked;
     private CameraController mainCam;
 
     [Header("Cardinal Directions")]
@@ -19,24 +20,23 @@ public class PanZone : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         GameObject[] camList = GameObject.FindGameObjectsWithTag("MainCamera");
         mainCam = camList[0].GetComponent<CameraController>();
-
+        inZone = false;
+        cameraLocked = false;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         inZone = true;
-        Debug.Log("InZone");
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         inZone = false;
-        Debug.Log("OutZone");
     }
 
     void Update()
     {
-        if (inZone)
+        if (inZone && !cameraLocked)
         {
             if (panType == "North")
             {
@@ -55,5 +55,11 @@ public class PanZone : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
                 mainCam.PanRight();
             }
         }
+    }
+
+    public void LockCamera()
+    {
+        Debug.Log("lock cam");
+        cameraLocked = !cameraLocked;
     }
 }
