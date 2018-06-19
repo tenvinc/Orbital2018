@@ -128,6 +128,12 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224893650488711102, guid: e3df801e07421044ea80268af9ba974d,
     type: 2}
   m_PrefabInternal: {fileID: 1151155854}
+--- !u!114 &524073108 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114349464579951850, guid: 7e4680f4499fd5049a68af64bc6424c5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1999326650}
+  m_Script: {fileID: 11500000, guid: 9bb4659134614e647a8e20cc7e41f9c0, type: 3}
 --- !u!4 &676779852 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4887120995230864, guid: c7bc3ff3ffcf7bd43b19e48a24170b82,
@@ -645,6 +651,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26d74bce543abff4ea34d596f84db6ee, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1074047273 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114847818496123720, guid: 7e4680f4499fd5049a68af64bc6424c5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1999326650}
+  m_Script: {fileID: 11500000, guid: 9bb4659134614e647a8e20cc7e41f9c0, type: 3}
 --- !u!4 &1124638018 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4848055733618698, guid: c7bc3ff3ffcf7bd43b19e48a24170b82,
@@ -1479,6 +1491,12 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224939863874352600, guid: 1e084ac4d090400419010ef751272d6e,
     type: 2}
   m_PrefabInternal: {fileID: 1931687679}
+--- !u!114 &1538405741 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114035521948965588, guid: 7e4680f4499fd5049a68af64bc6424c5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1999326650}
+  m_Script: {fileID: 11500000, guid: 9bb4659134614e647a8e20cc7e41f9c0, type: 3}
 --- !u!1001 &1556385693
 Prefab:
   m_ObjectHideFlags: 0
@@ -1859,6 +1877,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 094cdc0aee8f3d24b93726829ba78f00, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1641228457 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114892883602207596, guid: 7e4680f4499fd5049a68af64bc6424c5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1999326650}
+  m_Script: {fileID: 11500000, guid: 9bb4659134614e647a8e20cc7e41f9c0, type: 3}
 --- !u!1 &1794574252
 GameObject:
   m_ObjectHideFlags: 0
@@ -2174,20 +2198,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bc76cbca288c84c8e6010012e4e106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panSpeed: 10
-  zoomSpeed: 10
+  LockCamera:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1074047273}
+        m_MethodName: LockCamera
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1641228457}
+        m_MethodName: LockCamera
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 524073108}
+        m_MethodName: LockCamera
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1538405741}
+        m_MethodName: LockCamera
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  panSpeed: 7.5
+  zoomSpeed: 1
   thresholdFromBorder: 10
   minY: 10
-  maxY: 80
+  maxY: 36.2
   planeY: 2
   topLeft: {fileID: 1124638018}
   topRight: {fileID: 676779852}
   btmLeft: {fileID: 44624719}
   btmRight: {fileID: 1570538025}
-  TL: {x: 0, y: 0, z: 0}
-  TR: {x: 0, y: 0, z: 0}
-  BL: {x: 0, y: 0, z: 0}
-  BR: {x: 0, y: 0, z: 0}
 --- !u!81 &2026841666
 AudioListener:
   m_ObjectHideFlags: 0
