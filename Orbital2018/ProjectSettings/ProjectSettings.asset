@@ -420,6 +420,7 @@ PlayerSettings:
   switchAllowsRuntimeAddOnContentInstall: 0
   switchDataLossConfirmation: 0
   switchSupportedNpadStyles: 3
+  switchNativeFsCacheSize: 32
   switchSocketConfigEnabled: 0
   switchTcpInitialSendBufferSize: 32
   switchTcpInitialReceiveBufferSize: 64
@@ -663,9 +664,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 751f34ce-288e-4a8b-a456-20332a3d33f4
-  projectName: Orbital2018
-  organizationId: shouteckie
+  cloudProjectId: 7499d689-eb27-47bc-83bc-2a7bc5dc6cb9
+  projectName: Orbital2018 (1)
+  organizationId: vencintgamer
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

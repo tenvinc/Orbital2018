@@ -206,25 +206,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bc76cbca288c84c8e6010012e4e106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LockCamera:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   panSpeed: 30
   zoomSpeed: 10
   thresholdFromBorder: 10
   minY: 10
   maxY: 80
-  planeY: 2
-  topLeft: {fileID: 0}
-  topRight: {fileID: 0}
-  btmLeft: {fileID: 0}
-  btmRight: {fileID: 0}
-  TL: {x: 0, y: 0, z: 0}
-  TR: {x: 0, y: 0, z: 0}
-  BL: {x: 0, y: 0, z: 0}
-  BR: {x: 0, y: 0, z: 0}
 --- !u!224 &471230334 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224893650488711102, guid: e3df801e07421044ea80268af9ba974d,
@@ -1733,7 +1719,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4091118283496050, guid: 7cf3c7d4f166703418c1ad8c1c067748, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7cf3c7d4f166703418c1ad8c1c067748, type: 2}
@@ -1904,7 +1890,7 @@ Prefab:
       objectReference: {fileID: 902774731}
     - target: {fileID: 4290120333921362, guid: 12571a0749c90d742ad678d46603a61d, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 12571a0749c90d742ad678d46603a61d, type: 2}
@@ -1919,7 +1905,7 @@ Prefab:
     - target: {fileID: 224083843766448440, guid: bdacd54f1336be643a757da8290b8f7e,
         type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224083843766448440, guid: bdacd54f1336be643a757da8290b8f7e,
         type: 2}
@@ -1959,7 +1945,7 @@ Prefab:
     - target: {fileID: 224083843766448440, guid: bdacd54f1336be643a757da8290b8f7e,
         type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224083843766448440, guid: bdacd54f1336be643a757da8290b8f7e,
         type: 2}
@@ -2434,7 +2420,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4757864555268116, guid: b97e41c07aeafa448adbf6c5da5da433, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114006990380956484, guid: b97e41c07aeafa448adbf6c5da5da433,
         type: 2}

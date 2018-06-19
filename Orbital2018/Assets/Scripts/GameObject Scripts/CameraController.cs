@@ -24,8 +24,7 @@ public class CameraController : MonoBehaviour {
     public Transform btmRight;
 
     // make public for debugging
-    [Header("Debugging/Initialising")]
-    [SerializeField]private Vector3 TL;
+    [SerializeField] private Vector3 TL;
     [SerializeField] private Vector3 TR;
     [SerializeField] private Vector3 BL;
     [SerializeField] private Vector3 BR;
