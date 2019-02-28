@@ -14,13 +14,14 @@ public class Bullet : MonoBehaviour {
 
     void Update() {
         if (target == null) {
-            Debug.Log("Lost target");
-            Destroy(gameObject);
+            //Debug.Log("Lost target");
+            // Destroy(gameObject);
+            gameObject.SetActive(false);
             return;
         }
         Vector3 dir = target.position - transform.position;
         float distThisFrame = speed * Time.deltaTime;
-        if (dir.magnitude <= distThisFrame) {
+        if (dir.magnitude <= distThisFrame && target) {
             HitTarget();
             return;
         }
@@ -29,7 +30,8 @@ public class Bullet : MonoBehaviour {
 
     void HitTarget() {
         Damage(target);
-        Destroy(gameObject);
+        // Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     void Damage(Transform enemy)

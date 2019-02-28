@@ -4,23 +4,20 @@ public class IfBlockZone : BasicCode {
 
     public Transform ifConditionZone;
     public Transform ifExecutionZone;
-    public bool isConditionTrue;
     private int conditionNum;
+    private bool isConditionTrue;
 
     void Start() {
         ifExecutionZone.gameObject.SetActive(false);
-        if (transform.parent.tag == tagmasterso.CodeShopTag)
-        {
-            ifConditionZone.GetComponent<DropZone>().DisableDropZone();
-        }
+        isConditionTrue = false;
     }
 
     void Update () {
+        if (transform.parent.tag == tagmasterso.CodeShopTag) return;
         GetChildCount();
         if (conditionNum != 0)
         {
             ifExecutionZone.gameObject.SetActive(true);
-            Debug.Log("Condition is inputted enabling execution block now");
         }
         else
         {
@@ -32,23 +29,14 @@ public class IfBlockZone : BasicCode {
         if (conditionNum == 0) return;
         isConditionTrue = ifConditionZone.GetComponent<BasicCode>().RunCheck();
         if (isConditionTrue) {
-            Debug.Log("statement is true");
             ifExecutionZone.GetComponent<BasicCode>().Run();
-        }
-        else {
-            Debug.Log("statement is false");
         }
     }
 
     public override void SetTowerRef(Transform reference) {
-        if (transform.parent.tag != tagmasterso.CodeShopTag)
-            ifConditionZone.GetComponent<DropZone>().EnableDropZone();
-        towerRef = reference;
-        foreach (Transform c in transform)
-        {
-            c.GetComponent<BasicCode>().SetTowerRef(reference);
-        }
-        Debug.Log(towerRef.name);
+        ifConditionZone.GetComponent<BasicCode>().SetTowerRef(reference);
+        ifExecutionZone.GetComponent<BasicCode>().SetTowerRef(reference);
+
     }
 
     void GetChildCount() {
@@ -60,6 +48,11 @@ public class IfBlockZone : BasicCode {
                 count++;
             }
         }
-        conditionNum = count - 1;
+        conditionNum = count;
+    }
+
+    public bool IsIfBlockTrue()
+    {
+        return isConditionTrue;
     }
 }

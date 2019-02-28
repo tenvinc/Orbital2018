@@ -1,19 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using TMPro;
 
 public class TargetSpecificEnemy : BasicCode {
 
-    public Dropdown dropdown;
+    public TMP_Dropdown dropdown;
 
     private string enemyTag;
-
-    List<string> enemies = new List<string>() { "Please Select Enemy", "Enemy", "Boss" };
-
-    public void DropdownIndexChanged(int index)
-    {
-        enemyTag = enemies[index];
-    }
 
     private void Start()
     {
@@ -22,7 +16,7 @@ public class TargetSpecificEnemy : BasicCode {
 
     public override void Run()
     {
-      
+        enemyTag = LevelManager.level.spawner.enemies[dropdown.value];
         if (enemyTag == null || enemyTag == "Please Select Enemy")
             return;
 
@@ -31,15 +25,17 @@ public class TargetSpecificEnemy : BasicCode {
 
     public void PopulateList()
     {
-        dropdown.AddOptions(enemies);
+        dropdown.ClearOptions();
+        dropdown.AddOptions(LevelManager.level.spawner.enemies);
     }
 
     void TSE (string enemyTag)
     {
+        if (towerRef == null) return;
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
         float minDist = Mathf.Infinity;
         Transform target = null;
-        for (int i = 0; i < enemies.Length - 1; i++)
+        for (int i = 0; i < enemies.Length; i++)
         {
             float dist = Vector3.Distance(enemies[i].transform.position, towerRef.position);
             if (dist < minDist)

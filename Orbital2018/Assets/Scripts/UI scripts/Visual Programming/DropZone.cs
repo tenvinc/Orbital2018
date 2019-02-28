@@ -11,7 +11,6 @@ public class DropZone : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if (d != null) {
             d.dummyParent = transform;
         }
-        Debug.Log("Entering zone");
     }
 
 	public void OnPointerExit(PointerEventData data) {
@@ -21,7 +20,6 @@ public class DropZone : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             d.dummyParent = null;
             d.dummyIndex = -1;
         }
-        Debug.Log("Exiting zone");
     }
 
     public void DisableDropZone()

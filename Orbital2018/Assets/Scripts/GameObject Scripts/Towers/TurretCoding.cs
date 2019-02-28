@@ -4,10 +4,11 @@ public class TurretCoding : MonoBehaviour {
 
     public float timeBetweenActions = 0.5f;
 
-	public Transform towerConsole;
+	private Transform towerConsole;
 
     void Start () {
-		towerConsole = transform.parent.GetComponent<DisplayConsole>().GetTowerConsoleRef();
+		Transform towerConsoleGrp = transform.parent.GetComponent<DisplayConsole>().GetTowerConsoleRef();
+        towerConsole = towerConsoleGrp.GetChild(1);
 		//Debug.Log(towerConsole.name);
 		towerConsole.GetComponent<BasicCode>().SetTowerRef(transform);
         InvokeRepeating("RunPlayerCode", 0f, timeBetweenActions);

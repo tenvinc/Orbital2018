@@ -2,9 +2,13 @@
 
 public class BuildManager : MonoBehaviour {
 
-    // TODO: Change this to arrays when there are more than 1 prefab
-    public GameObject prefab;
     public static BuildManager bm;
+
+    public static bool isDuplicated;
+    public static TurretBlueprint duplicatedBlueprint;
+    public static GameObject duplicatedPrefab;
+    public static GameObject duplicatedTowerconsole;
+    public static GameObject duplicatedCodeshop;
 
     [SerializeField]
     private TurretBlueprint turretToBuild;
@@ -14,6 +18,7 @@ public class BuildManager : MonoBehaviour {
             Debug.Log("More than 1 build manager in scene");
         }
         else bm = this;
+        isDuplicated = false;
     }
    
     public TurretBlueprint GetTurretToBuild() {
@@ -22,6 +27,23 @@ public class BuildManager : MonoBehaviour {
 
     public void SetTurretToBuild(TurretBlueprint turret) {
         turretToBuild = turret;
+        if (InterfaceManager.ui.selectedNode == null) return;
+        InterfaceManager.ui.selectedNode.ResetSelection();
+        InterfaceManager.ui.selectedNode = null;
         return;
     }
+
+    public void ResetTurretToBuild()
+    {
+        turretToBuild = null;
+    }
+
+    public void ResetDupTurret()
+    {
+        isDuplicated = false;
+        duplicatedBlueprint = null;
+        duplicatedPrefab = null;
+        duplicatedTowerconsole = null;
+        duplicatedCodeshop = null;
+}
 }

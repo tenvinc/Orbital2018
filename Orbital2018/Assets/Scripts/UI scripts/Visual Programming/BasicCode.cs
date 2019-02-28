@@ -24,4 +24,20 @@ public class BasicCode : MonoBehaviour {
 	public Transform GetTowerRef() {
 		return towerRef;
 	}
+
+    public void UpdateTowerRef()
+    {
+        BasicCode reference = transform.parent.GetComponent<BasicCode>();
+        if (reference != null)
+        {
+            Transform towerref = reference.GetTowerRef();
+            SetTowerRef(towerref);
+        }
+        foreach (Transform child in transform)
+        {
+            BasicCode childRef = child.GetComponent<BasicCode>();
+            if (childRef != null) 
+                child.GetComponent<BasicCode>().UpdateTowerRef();
+        }
+    }
 }

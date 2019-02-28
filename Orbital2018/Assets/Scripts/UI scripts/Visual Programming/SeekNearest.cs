@@ -3,11 +3,6 @@ using System.Collections.Generic;
 
 public class SeekNearest : BasicCode {
 
-    private void Start()
-    {
-        tagmasterso.Initialize();
-    }
-
     public override void Run() {
         List<GameObject> enemies = new List<GameObject>();
         for (int i = 0; i < tagmasterso.Tags.Count; i++)
